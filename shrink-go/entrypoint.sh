@@ -23,12 +23,12 @@ printf "Done.\n"
 
 printf "Packing with upx...\n"
 DIR=$(basename "$PWD")
-upx -f --best --ultra-brute -o $DIR-upx $DIR
+upx -f -o $DIR-upx $DIR
 if [ $? -ne 0 ]; then
     echo -e "ERROR: Couldn't pack $PROJ with upx"
     echo -e "Aborting."
     exit 1
 fi
 
-echo "Successfully shrinked $PROJ!"
+echo "Successfully shrunk $PROJ!"
 echo "Done."
